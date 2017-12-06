@@ -11,6 +11,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingBottom="100dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="x.xx/x.xx"
+        android:layout_toStartOf="@id/water_plant"/>
+
     <Button
         android:id="@+id/water_plant"
         android:text="@string/water_button"
@@ -20,23 +27,23 @@
         android:layout_alignParentBottom="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="52dp"
         android:textAllCaps="false"
-        android:layout_toLeftOf="@id/add_drink"/>
+        android:layout_toStartOf="@id/add_drink"/>
 
     <Button
         android:id="@+id/add_drink"
         android:text="+"
         android:textSize="15sp"
         android:textColor="#80FFFFFF"
-        android:background="@drawable/btn_drink_water"
+        android:background="@drawable/btn_add_drink"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_width="100px"
+        android:layout_alignParentEnd="true"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginRight="60dp"/>
+        android:layout_marginEnd="60dp"/>
 </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
