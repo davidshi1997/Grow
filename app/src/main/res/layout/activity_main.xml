@@ -4,6 +4,39 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#437356"
     tools:context="com.amazingapps.davidmaisy.grow.MainActivity">
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="100dp">
+    <Button
+        android:id="@+id/water_plant"
+        android:text="@string/water_button"
+        android:textSize="15sp"
+        android:textColor="#80FFFFFF"
+        android:background="@drawable/btn_drink_water"
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="52dp"
+        android:textAllCaps="false"
+        android:layout_toLeftOf="@id/add_drink"/>
+
+    <Button
+        android:id="@+id/add_drink"
+        android:text="+"
+        android:textSize="15sp"
+        android:textColor="#80FFFFFF"
+        android:background="@drawable/btn_drink_water"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="100px"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="60dp"/>
+</RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
