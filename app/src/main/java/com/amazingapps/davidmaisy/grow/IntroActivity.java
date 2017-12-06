@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+// TODO: Implement pagetracker and replace placeholder fragments
+
 public class IntroActivity extends FragmentActivity {
 
     /**
