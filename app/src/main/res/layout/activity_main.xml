@@ -83,43 +83,55 @@
         </LinearLayout>
     </RelativeLayout>
 
-<RelativeLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingBottom="100dp">
-
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="x.xx/x.xx"
-        android:layout_toStartOf="@id/water_plant"/>
+        android:paddingBottom="80dp"
+        android:paddingRight="40dp" >
 
-    <Button
-        android:id="@+id/water_plant"
-        android:text="@string/water_button"
-        android:textSize="15sp"
-        android:textColor="#80FFFFFF"
-        android:background="@drawable/btn_drink_water"
-        android:layout_alignParentBottom="true"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="60dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="52dp"
-        android:textAllCaps="false"
-        android:layout_toStartOf="@id/add_drink"/>
+        <View
+            android:id="@+id/v_seed"
+            android:layout_width="250sp"
+            android:layout_height="250sp"
+            android:layout_above="@id/tv_percentage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp" />
 
-    <Button
-        android:id="@+id/add_drink"
-        android:text="+"
-        android:textSize="15sp"
-        android:textColor="#80FFFFFF"
-        android:background="@drawable/btn_add_drink"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_width="50dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="60dp"/>
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tv_percentage"
+            android:text="x.xx/x.xx"
+            android:textColor="#80FFFFFF"
+            android:textSize="50sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btn_water"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btn_water"
+            android:text="@string/water_button"
+            android:textSize="15sp"
+            android:textColor="#80FFFFFF"
+            android:background="@drawable/btn_drink_normal"
+            android:layout_alignParentBottom="true"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginEnd="10dp"
+            android:textAllCaps="false"
+            android:layout_toStartOf="@id/btn_add_size"/>
+
+        <Button
+            android:id="@+id/btn_add_size"
+            android:text="+"
+            android:textSize="15sp"
+            android:textColor="#80FFFFFF"
+            android:background="@drawable/btn_add_drink_normal"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"/>
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
