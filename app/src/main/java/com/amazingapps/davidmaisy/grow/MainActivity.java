@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
 
         progressBar.bringToFront();
-        ObjectAnimator animation = ObjectAnimator.ofInt (progressBar, "progress", 300, 500);
+        ObjectAnimator animation = ObjectAnimator.ofInt (progressBar, "progress", 0, 500);
         animation.setDuration(5000);
         animation.setInterpolator(new DecelerateInterpolator());
         animation.start();
