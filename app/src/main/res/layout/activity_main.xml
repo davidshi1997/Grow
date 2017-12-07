@@ -91,6 +91,7 @@
 
         <View
             android:id="@+id/v_seed"
+            android:background="@drawable/temp_ic_circle"
             android:layout_width="250sp"
             android:layout_height="250sp"
             android:layout_above="@id/tv_percentage"
