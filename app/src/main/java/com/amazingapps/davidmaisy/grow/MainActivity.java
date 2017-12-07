@@ -1,16 +1,16 @@
 package com.amazingapps.davidmaisy.grow;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.LinearLayout;
 
 import java.util.Calendar;
 import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
-
+    LinearLayout dropDownMenuIconItem;
 
     // TODO: Should load in saved data, such as coins, seeds, and drinks
     @Override
@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
         setContentView(R.layout.activity_main);
+
+        dropDownMenuIconItem = (LinearLayout) findViewById(R.id.vertical_dropdown_icon_menu_items);
     }
 
     // TODO: Should check the time to see if plant should be dead and kill any background notification service
@@ -44,5 +46,19 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+    }
+
+    // TODO: Make this fancier if there's time
+    public void verticalDropDownIconMenu(View view) {
+        if (dropDownMenuIconItem.getVisibility() == View.VISIBLE) {
+            dropDownMenuIconItem.setVisibility(View.INVISIBLE);
+        } else {
+            dropDownMenuIconItem.setVisibility(View.VISIBLE);
+        }
+    }
+
+    // TODO: Split this into different transitions for views
+    public void menuItemClick(View view) {
+        dropDownMenuIconItem.setVisibility(View.INVISIBLE);
     }
 }
