@@ -1,5 +1,6 @@
 package com.amazingapps.davidmaisy.grow;
 
+import android.animation.ObjectAnimator;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -10,8 +11,10 @@ import android.graphics.RectF;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -19,7 +22,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout dropDownMenuIconItem;
-    ImageView circularBackground;
+    ProgressBar progressBar;
 
     // TODO: Should load in saved data, such as coins, seeds, and drinks
     @Override
@@ -48,6 +51,14 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         Date currentTime = Calendar.getInstance().getTime();
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
+
+        progressBar.bringToFront();
+        ObjectAnimator animation = ObjectAnimator.ofInt (progressBar, "progress", 300, 500);
+        animation.setDuration(5000);
+        animation.setInterpolator(new DecelerateInterpolator());
+        animation.start();
     }
 
     // TODO: Should save current waterlevel and seedtype before destruction as well as starts background notification service

@@ -89,6 +89,18 @@
         android:paddingBottom="80dp"
         android:paddingRight="40dp" >
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_above="@id/tv_percentage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:max="500"
+            android:progress="100"
+            android:progressDrawable="@drawable/pb_circular" />
+
         <View
             android:id="@+id/v_seed"
             android:background="@drawable/temp_ic_circle"
