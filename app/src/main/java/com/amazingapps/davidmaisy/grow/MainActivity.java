@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        dropDownMenuIconItem = (LinearLayout) findViewById(R.id.vertical_dropdown_icon_menu_items);
+        dropDownMenuIconItem = (LinearLayout) findViewById(R.id.vertical_dropdown_menu_items);
     }
 
     // TODO: Should check the time to see if plant should be dead and kill any background notification service
