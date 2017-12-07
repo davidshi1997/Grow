@@ -1,8 +1,16 @@
 package com.amazingapps.davidmaisy.grow;
 
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.Calendar;
@@ -11,6 +19,7 @@ import java.util.Date;
 public class MainActivity extends AppCompatActivity {
 
     LinearLayout dropDownMenuIconItem;
+    ImageView circularBackground;
 
     // TODO: Should load in saved data, such as coins, seeds, and drinks
     @Override
@@ -30,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         dropDownMenuIconItem = (LinearLayout) findViewById(R.id.vertical_dropdown_menu_items);
+
     }
 
     // TODO: Should check the time to see if plant should be dead and kill any background notification service
@@ -60,5 +70,27 @@ public class MainActivity extends AppCompatActivity {
     // TODO: Split this into different transitions for views
     public void menuItemClick(View view) {
         dropDownMenuIconItem.setVisibility(View.INVISIBLE);
+    }
+
+    private static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
+        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
+                .getHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(output);
+
+        final int color = 0x80FFFFFF;
+        final Paint paint = new Paint();
+        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
+        final RectF rectF = new RectF(rect);
+        final float roundPx = pixels;
+
+        paint.setAntiAlias(true);
+        canvas.drawARGB(0, 0, 0, 0);
+        paint.setColor(color);
+        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
+
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
+        canvas.drawBitmap(bitmap, rect, rect, paint);
+
+        return output;
     }
 }
