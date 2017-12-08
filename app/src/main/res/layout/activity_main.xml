@@ -17,7 +17,7 @@
 
         <ImageButton
             android:id="@+id/dropdown_custom_icon_menu"
-            android:layout_width="wrap_content"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -94,8 +94,8 @@
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_above="@id/tv_percentage"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp"
@@ -106,36 +106,38 @@
         <View
             android:id="@+id/v_seed"
             android:background="@drawable/temp_ic_circle"
-            android:layout_width="250sp"
-            android:layout_height="250sp"
+            android:layout_width="200sp"
+            android:layout_height="200sp"
             android:layout_above="@id/tv_percentage"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="10dp" />
 
         <TextView
             android:id="@+id/tv_percentage"
-            android:text="x.xx/x.xx"
-            android:textColor="#80FFFFFF"
-            android:textSize="50sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@id/btn_water"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp" />
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/raleway_light"
+            android:text="x.xx/x.xx"
+            android:textColor="#80FFFFFF"
+            android:textSize="50sp" />
 
         <Button
             android:id="@+id/btn_water"
-            android:text="@string/water_button"
-            android:textSize="15sp"
-            android:textColor="#80FFFFFF"
-            android:background="@drawable/btn_drink_normal"
-            android:layout_alignParentBottom="true"
-            android:layout_width="fill_parent"
+            android:layout_width="190dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
+            android:layout_alignParentBottom="true"
             android:layout_marginEnd="10dp"
+            android:layout_marginStart="60dp"
+            android:layout_toStartOf="@id/btn_add_size"
+            android:background="@drawable/btn_drink_normal"
+            android:fontFamily="@font/raleway"
+            android:text="@string/water_button"
             android:textAllCaps="false"
-            android:layout_toStartOf="@id/btn_add_size"/>
+            android:textColor="#80FFFFFF"
+            android:textSize="15sp" />
 
         <Button
             android:id="@+id/btn_add_size"
