@@ -30,6 +30,7 @@
 
         <ListPreference
             android:defaultValue="480"
+            android:summary="%s"
             android:entries="@array/pref_notification_frequency_titles"
             android:entryValues="@array/pref_notificationi_frequency_values"
             android:key="notification_list"

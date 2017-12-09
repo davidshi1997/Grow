@@ -40,7 +40,7 @@
         <item name="android:textColorPrimary">#817862</item>
         <item name="android:textColorSecondary">#9E8F7B</item>
         <item name="windowActionBar">true</item>
-        <item name="windowNoTitle">true</item>
+        <item name="windowNoTitle">false</item>
 
         <item name="android:alertDialogTheme">@style/DialogTheme</item>
     </style>
