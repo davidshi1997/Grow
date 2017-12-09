@@ -31,9 +31,6 @@
     <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:textColorPrimary">#817862</item>
         <item name="android:textColorAlertDialogListItem">#817862</item>
-        <item name="android:editTextColor">#817862</item>
-
-        <item name="color">#817862</item>
 
     </style>
 
