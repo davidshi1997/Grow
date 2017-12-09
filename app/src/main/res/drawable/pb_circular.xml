@@ -7,10 +7,10 @@
 
 <shape
     android:shape="ring"
-    android:innerRadiusRatio="2.2"
+    android:innerRadiusRatio="2.25"
     android:useLevel="true"
-    android:thickness="4.5sp" >
+    android:thickness="10sp" >
 
-    <solid android:color="#80FFFFFF" />
+    <solid android:color="#b7ca79" />
 </shape>
 </rotate>
