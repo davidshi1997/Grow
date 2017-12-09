@@ -32,7 +32,7 @@
             android:defaultValue="480"
             android:summary="%s"
             android:entries="@array/pref_notification_frequency_titles"
-            android:entryValues="@array/pref_notificationi_frequency_values"
+            android:entryValues="@array/pref_notification_frequency_values"
             android:key="notification_list"
             android:positiveButtonText="@null"
             android:negativeButtonText="@null"
@@ -41,9 +41,14 @@
 
     <PreferenceCategory android:title="User Data">
         <Preference
-            android:title="@string/pref_title_weight_data"
+            android:title="@string/pref_title_daily_data"
             android:summary="summary3"
-            android:key="keyName"/>
+            android:key="daily_water"/>
+
+        <Preference
+            android:title="@string/pref_title_tutorial">
+            <intent android:action="intro.action.string"/>
+        </Preference>
 
     </PreferenceCategory>
 

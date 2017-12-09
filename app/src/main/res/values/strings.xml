@@ -24,7 +24,7 @@
         <item>6 hours</item>
         <item>8 hours</item>
     </string-array>
-    <string-array name="pref_notificationi_frequency_values">
+    <string-array name="pref_notification_frequency_values">
         <item>1</item>
         <item>120</item>
         <item>240</item>
@@ -32,7 +32,9 @@
         <item>480</item>
     </string-array>
 
-    <string name="pref_title_weight_data">Weight</string>
+    <string name="pref_title_daily_data">Change Daily Water Intake</string>
+
+    <string name="pref_title_tutorial">Show the Tutorial Again</string>
 
     <string-array name="list_preference_entries">
         <item>Entry 1</item>
