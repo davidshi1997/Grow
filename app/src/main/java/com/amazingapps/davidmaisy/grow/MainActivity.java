@@ -1,6 +1,7 @@
 package com.amazingapps.davidmaisy.grow;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -81,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
     // TODO: Split this into different transitions for views
     public void menuItemClick(View view) {
         dropDownMenuIconItem.setVisibility(View.INVISIBLE);
+    }
+
+    public void menuSettingsClick(View view) {
+        Intent k = new Intent(MainActivity.this, SettingsActivity.class);
+        startActivity(k);
     }
 
     private static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
