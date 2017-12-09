@@ -17,4 +17,24 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
+    <style name="CustomActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:logo">@android:color/transparent</item>
+        <item name="android:background">#AFD5E5</item>
+        <item name="android:titleTextStyle">@style/AppTheme.TitleTextStyle</item>
+    </style>
+
+    <style name="AppTheme.TitleTextStyle" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">#677E52</item>
+    </style>
+
+    <style name="PreferenceTheme">
+        <item name="android:actionBarStyle">@style/CustomActionBar</item>
+        <item name="android:background">#F0F0D7</item>
+        <item name="android:textColor">#817862</item>
+        <item name="android:textColorSecondary">#817862</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 </resources>
