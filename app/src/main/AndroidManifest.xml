@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".IntroActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -23,12 +23,14 @@
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".GardenActivity"></activity>
     </application>
 
 </manifest>
