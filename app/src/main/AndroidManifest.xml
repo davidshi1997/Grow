@@ -34,7 +34,7 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".GardenActivity"></activity>
+        <activity android:name=".GardenActivity" android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
