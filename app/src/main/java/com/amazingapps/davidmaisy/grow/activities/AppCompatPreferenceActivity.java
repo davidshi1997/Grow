@@ -1,4 +1,4 @@
-package com.amazingapps.davidmaisy.grow;
+package com.amazingapps.davidmaisy.grow.activities;
 
 import android.content.res.Configuration;
 import android.os.Bundle;

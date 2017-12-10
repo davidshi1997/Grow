@@ -1,4 +1,4 @@
-package com.amazingapps.davidmaisy.grow;
+package com.amazingapps.davidmaisy.grow.activities;
 
 import android.support.v4.app.FragmentActivity;
 
@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+
+import com.amazingapps.davidmaisy.grow.R;
 
 // TODO: Implement pagetracker and replace placeholder fragments
 

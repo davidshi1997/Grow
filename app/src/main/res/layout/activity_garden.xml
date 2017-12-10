@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#feffe2"
-    tools:context="com.amazingapps.davidmaisy.grow.GardenActivity">
+    tools:context="com.amazingapps.davidmaisy.grow.activities.GardenActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
