@@ -41,14 +41,15 @@
 
     <PreferenceCategory android:title="User Data">
         <Preference
-            android:title="@string/pref_title_daily_data"
             android:summary="summary3"
-            android:key="daily_water"/>
+            android:key="daily_water"
+            android:title="@string/pref_title_daily_data"/>
 
         <Preference
             android:title="@string/pref_title_tutorial">
             <intent android:action="intro.action.string"/>
         </Preference>
+
 
     </PreferenceCategory>
 
