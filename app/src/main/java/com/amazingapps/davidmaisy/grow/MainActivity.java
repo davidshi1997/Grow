@@ -84,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
         dropDownMenuIconItem.setVisibility(View.INVISIBLE);
     }
 
+    public void menuGardenClick(View view){
+        Intent k = new Intent(MainActivity.this, GardenActivity.class);
+        startActivity(k);
+    }
     public void menuSettingsClick(View view) {
         Intent k = new Intent(MainActivity.this, SettingsActivity.class);
         startActivity(k);
