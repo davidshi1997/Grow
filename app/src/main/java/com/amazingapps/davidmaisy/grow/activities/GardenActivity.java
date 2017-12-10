@@ -5,6 +5,8 @@ import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.LinearLayout;
 import android.widget.ImageView;
 import android.widget.RelativeLayout.LayoutParams;
@@ -18,5 +20,13 @@ public class GardenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_garden);
     }
-    
+
+    public void showPlantDetails(View view) {
+        TextView plantDate = (TextView)findViewById(R.id.tv_plantDate);
+        plantDate.setText("hello");
+
+    }
+
+
+
 }
