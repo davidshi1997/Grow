@@ -30,29 +30,168 @@
             android:layout_height="20dp"
             android:layout_alignStart="@+id/v_seed"
             android:layout_alignTop="@+id/v_seed"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="72dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="78dp"
             app:srcCompat="@drawable/ic_phase5" />
 
         <ImageView
             android:id="@+id/space2"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_alignBottom="@+id/space1"
-            android:layout_marginBottom="13dp"
-            android:layout_marginStart="5dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="80dp"
             android:layout_toEndOf="@+id/space1"
-            app:srcCompat="@drawable/ic_phase3" />
+            app:srcCompat="@drawable/ic_phase5" />
 
         <ImageView
             android:id="@+id/space3"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignBottom="@+id/space2"
-            android:layout_marginBottom="12dp"
-            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="14dp"
+            android:layout_marginStart="10dp"
             android:layout_toEndOf="@+id/space2"
-            app:srcCompat="@drawable/ic_phase4" />
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space4"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/space3"
+            android:layout_marginBottom="14dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/space3"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space5"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignBottom="@+id/space4"
+            android:layout_marginBottom="14dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/space4"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space6"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="-10dp"
+            android:layout_above="@+id/space5"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space7"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="-5dp"
+            android:layout_alignStart="@+id/space2"
+            android:layout_below="@+id/space2"
+            app:srcCompat="@drawable/ic_phase5" />
+
+
+        <ImageView
+            android:id="@+id/space8"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="-5dp"
+            android:layout_alignStart="@+id/space3"
+            android:layout_below="@+id/space4"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space9"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="-5dp"
+            android:layout_alignStart="@+id/space4"
+            android:layout_below="@+id/space5"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space10"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="-5dp"
+            android:layout_alignStart="@+id/space5"
+            android:layout_alignTop="@+id/space3"
+            app:srcCompat="@drawable/ic_phase5" />
+
+
+        <ImageView
+            android:id="@+id/space11"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="-5dp"
+            android:layout_alignStart="@+id/space6"
+            android:layout_alignTop="@+id/space4"
+            app:srcCompat="@drawable/ic_phase5" />
+
+
+        <ImageView
+            android:id="@+id/space12"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_alignTop="@+id/space5"
+            android:layout_toEndOf="@+id/space6"
+            app:srcCompat="@drawable/ic_phase5" />
+
+
+        <ImageView
+            android:id="@+id/space13"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/space1"
+            android:layout_marginStart="35dp"
+            android:layout_toEndOf="@+id/space1"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space14"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/space3"
+            android:layout_toEndOf="@+id/space3"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space15"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_below="@+id/space4"
+            android:layout_toEndOf="@+id/space4"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space16"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignStart="@+id/space11"
+            android:layout_below="@+id/space5"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space17"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="5dp"
+            android:layout_above="@+id/space15"
+            android:layout_alignStart="@+id/space12"
+            app:srcCompat="@drawable/ic_phase5" />
+
+        <ImageView
+            android:id="@+id/space18"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignTop="@+id/space11"
+            android:layout_marginStart="11dp"
+            android:layout_toEndOf="@+id/space12"
+            app:srcCompat="@drawable/ic_phase5" />
+
 
 
     </RelativeLayout>
