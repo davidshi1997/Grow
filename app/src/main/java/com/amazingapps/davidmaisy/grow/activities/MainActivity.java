@@ -90,9 +90,14 @@ public class MainActivity extends AppCompatActivity {
         Intent k = new Intent(MainActivity.this, GardenActivity.class);
         startActivity(k);
     }
+
     public void menuSettingsClick(View view) {
         Intent k = new Intent(MainActivity.this, SettingsActivity.class);
         startActivity(k);
+    }
+
+    public void waterPlant(View view) {
+
     }
 
     private static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
