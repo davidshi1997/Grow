@@ -14,6 +14,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.amazingapps.davidmaisy.grow.R;
+import com.amazingapps.davidmaisy.grow.plant.Garden;
+import java.util.ArrayList;
 
 // TODO: Implement pagetracker and replace placeholder fragments
 
@@ -33,17 +35,23 @@ public class GardenActivity extends FragmentActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     private ViewPager mViewPager;
+    static private ArrayList<Garden> gardens;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_intro);
-
+        setContentView(R.layout.activity_garden);
+        gardens = new ArrayList<Garden>();
+        Garden garden1 = new Garden(1, 2017);
+        gardens.add(garden1);
+        Garden garden2 = new Garden(2, 2017);
+        gardens.add(garden2);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
+
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
@@ -79,7 +87,10 @@ public class GardenActivity extends FragmentActivity {
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.activity_garden, container, false);
-
+            TextView textView = (TextView) rootView.findViewById(R.id.tv_date);
+            String str = getString(R.string.gardenDate, getArguments().getInt(ARG_SECTION_NUMBER));
+            Garden currGarden = gardens.get(Integer.parseInt(str)-1);
+            textView.setText(currGarden.getTitle());
             return rootView;
         }
     }
@@ -104,7 +115,12 @@ public class GardenActivity extends FragmentActivity {
         @Override
         public int getCount() {
             // Show 3 total pages.
-            return 3;
+            return gardens.size();
         }
     }
+    public void showPlantDetails(View view) {
+        TextView plantDate = (TextView)findViewById(R.id.tv_plantDate);
+        plantDate.setText("hello");
+    }
+
 }
