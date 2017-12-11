@@ -25,7 +25,6 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="61dp"
             android:fontFamily="@font/roboto_condensed_bold"
-            android:text="DECEMBER GARDEN"
             android:textColor="#677e52"
             android:textSize="40sp" />
 
