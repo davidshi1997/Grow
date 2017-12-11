@@ -6,6 +6,10 @@
 
     <string name="water_button">Drink 8 oz</string>
 
+    <!-- Strings related to Notifications -->
+    <string name="notification_title">"Grow"</string>
+    <string name="notification_message">"It seems as though you haven't drank water in a while. Drink something soon before your plant dies!"</string>
+
     <!-- Strings related to Settings -->
 
     <string name="pref_header_notifications">Notifications</string>

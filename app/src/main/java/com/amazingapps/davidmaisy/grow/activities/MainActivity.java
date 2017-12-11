@@ -1,6 +1,8 @@
 package com.amazingapps.davidmaisy.grow.activities;
 
 import android.animation.ObjectAnimator;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
@@ -19,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.amazingapps.davidmaisy.grow.R;
+import com.amazingapps.davidmaisy.grow.utils.AlarmReceiver;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void waterPlant(View view) {
-
+        handleNotification();
     }
 
     private static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
@@ -120,5 +123,16 @@ public class MainActivity extends AppCompatActivity {
         canvas.drawBitmap(bitmap, rect, rect, paint);
 
         return output;
+    }
+
+    private void handleNotification() {
+        Intent alarmIntent = new Intent(this, AlarmReceiver.class);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this, 0, alarmIntent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+        Calendar c = Calendar.getInstance();
+        c.add(Calendar.SECOND, 10);
+        long time = c.getTimeInMillis();
+        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+        alarmManager.set(AlarmManager.RTC_WAKEUP, time, pendingIntent);
     }
 }
