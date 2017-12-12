@@ -144,8 +144,12 @@ public class GardenActivity extends FragmentActivity {
                     @Override
                     public void onClick(View view) {
                         ImageButton currButton = (ImageButton) view;
-                        String resourceName = getResources().getResourceEntryName(view.getId());
-                        int plantPosition = Integer.parseInt(resourceName.substring(resourceName.length()-1));
+                        String resourceName = getResources().getResourceEntryName(view.getId()).replaceAll("space", "");
+                                                             System.out.println(resourceName);
+
+
+                        int plantPosition = Integer.parseInt(resourceName);
+                      
                         System.out.println(plantPosition);
                         for (Plant p: currGarden.getPlants())
                             if(p.getPosition()==plantPosition){
