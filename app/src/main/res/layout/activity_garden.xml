@@ -45,7 +45,6 @@
             android:layout_alignTop="@+id/v_seed"
             android:layout_marginStart="25dp"
             android:layout_marginTop="75dp"
-            android:onClick="showPlantDetails"
             android:background="@drawable/ic_flower_5" />
 
         <ImageButton

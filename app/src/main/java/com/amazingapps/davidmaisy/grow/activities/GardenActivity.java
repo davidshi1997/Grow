@@ -17,6 +17,8 @@ import android.widget.TextView;
 import com.amazingapps.davidmaisy.grow.R;
 import com.amazingapps.davidmaisy.grow.plant.Garden;
 import java.util.ArrayList;
+import android.view.View.OnClickListener;
+
 
 // TODO: Implement pagetracker and replace placeholder fragments
 
@@ -37,6 +39,7 @@ public class GardenActivity extends FragmentActivity {
      */
     private ViewPager mViewPager;
     static private ArrayList<Garden> gardens;
+    static private ArrayList<ImageButton> buttons;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +86,11 @@ public class GardenActivity extends FragmentActivity {
             return fragment;
         }
 
+        class PlantListener implements OnClickListener{
+            public void onClick (View v){
+               System.out.println("HELLO");
+            }
+        }
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
@@ -92,8 +100,31 @@ public class GardenActivity extends FragmentActivity {
             Garden currGarden = gardens.get(Integer.parseInt(str)-1);
             textView.setText(currGarden.getTitle());
 
+            
+            buttons= new ArrayList<ImageButton>();
+            PlantListener l = new PlantListener();
+            
+            for(int i=1; i<37; i++) {
+                String buttonID = "space" + i;
+                int resID = getResources().getIdentifier(buttonID, "id", getActivity().getPackageName());
+                buttons.add((ImageButton) getActivity().findViewById(resID));
+                buttons.get(i-1).setOnClickListener(l);
+//                buttons.get(i-1).setOnClickListener(new OnClickListener() {
+//                    @Override
+//                    public void onClick(View view) {
+////                         TextView plantDate = (TextView)getView().findViewById(R.id.tv_plantDate);
+////
+////                         plantDate.setText("Plant");
+//                           System.out.println("hello");
 //
-//            TextView plantDate = (TextView)rootView.findViewById(R.id.tv_plantDate);
+//                    }
+//                });
+
+            }
+
+
+            
+//
 //            ImageButton space1 = (ImageButton)rootView.findViewById(R.id.space1);
 //            ImageButton space2 = (ImageButton)rootView.findViewById(R.id.space2);
 //            ImageButton space3 = (ImageButton)rootView.findViewById(R.id.space3);
@@ -166,7 +197,7 @@ public class GardenActivity extends FragmentActivity {
         }
     }
     public void showPlantDetails(View view) {
-   
+
    
     }
 
