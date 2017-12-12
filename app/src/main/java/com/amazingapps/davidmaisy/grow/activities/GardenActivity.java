@@ -57,9 +57,9 @@ public class GardenActivity extends FragmentActivity {
         gardens.add(garden1);
         Garden garden2 = new Garden(2, 2017);
         gardens.add(garden2);
-        Plant plant1 = new Plant("flower", 5);
+        Plant plant1 = new Plant("flower", 5, "alive");
         plant1.putPosition(1);
-        Plant plant2 = new Plant("flower", 4);
+        Plant plant2 = new Plant("flower", 4, "dead");
         plant2.putPosition(2);
         garden1.addPlant(plant1);
         garden1.addPlant(plant2);
@@ -125,7 +125,7 @@ public class GardenActivity extends FragmentActivity {
                  String plantID = "space" + p.getPosition();
                  int resID = getResources().getIdentifier(plantID, "id", PACKAGE_NAME);
                  ImageButton currPlant = (ImageButton) rootView.findViewById(resID);
-                 String plantImg = "ic_" + p.getType() + "_" + p.getPhase();
+                 String plantImg = "ic_" + p.getType() + "_" + p.getPhase() + "_" + p.getState();
                  int plantImgID = getResources().getIdentifier(plantImg, "drawable", PACKAGE_NAME);
                  Drawable drawable = getResources().getDrawable(plantImgID);
                  currPlant.setBackground(drawable);

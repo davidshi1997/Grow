@@ -13,6 +13,7 @@ public class Plant {
     private int month;
     private int day;
     private int dayOfWeek;
+    private String state;
 
     String[] monthName = {"January", "February",
             "March", "April", "May", "June", "July",
@@ -30,9 +31,10 @@ public class Plant {
         this.day = now.get(Calendar.DAY_OF_MONTH);
     }
 
-    public Plant(String type, int stage) {
+    public Plant(String type, int phase, String state) {
         this.type = type;
-        this.phase = stage;
+        this.phase = phase;
+        this.state = state;
         this.position = -1;
         Calendar now = Calendar.getInstance();
         this.year = now.get(Calendar.YEAR);
@@ -67,6 +69,8 @@ public class Plant {
     public String getType(){ return this.type;}
 
     public int getPhase(){ return this.phase;}
+
+    public String getState(){ return this.state;}
 
     private String getDayOfWeek(){
         switch (dayOfWeek) {
