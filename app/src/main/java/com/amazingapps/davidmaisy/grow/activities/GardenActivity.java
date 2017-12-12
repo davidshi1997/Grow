@@ -1,5 +1,6 @@
 package com.amazingapps.davidmaisy.grow.activities;
 
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.FragmentActivity;
 
 import android.support.v4.app.Fragment;
@@ -16,6 +17,8 @@ import android.widget.TextView;
 
 import com.amazingapps.davidmaisy.grow.R;
 import com.amazingapps.davidmaisy.grow.plant.Garden;
+import com.amazingapps.davidmaisy.grow.plant.Plant;
+
 import java.util.ArrayList;
 import android.view.View.OnClickListener;
 
@@ -40,16 +43,30 @@ public class GardenActivity extends FragmentActivity {
     private ViewPager mViewPager;
     static private ArrayList<Garden> gardens;
     static private ArrayList<ImageButton> buttons;
+    public static String PACKAGE_NAME;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_garden);
+
+        /*DUMMY DATA WHILE WE DONT HAVE ANY DATA COMING FROM ANYWHERE ELSE!*/
         gardens = new ArrayList<Garden>();
         Garden garden1 = new Garden(1, 2017);
         gardens.add(garden1);
         Garden garden2 = new Garden(2, 2017);
         gardens.add(garden2);
+        Plant plant1 = new Plant("flower", 5);
+        plant1.putPosition(1);
+        Plant plant2 = new Plant("flower", 4);
+        plant2.putPosition(2);
+        garden1.addPlant(plant1);
+        garden1.addPlant(plant2);
+
+        /**********************************/
+        PACKAGE_NAME = getApplicationContext().getPackageName();
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -88,87 +105,54 @@ public class GardenActivity extends FragmentActivity {
 
         class PlantListener implements OnClickListener{
             public void onClick (View v){
-               System.out.println("HELLO");
+                TextView plantDate = (TextView)getView().findViewById(R.id.tv_plantDate);
+                plantDate.setText("Plant");
             }
         }
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.activity_garden, container, false);
+
+            //SETTING THE GARDEN'S MONTH/YEAR AND DISPLAYING
             TextView textView = (TextView) rootView.findViewById(R.id.tv_date);
             String str = getString(R.string.gardenDate, getArguments().getInt(ARG_SECTION_NUMBER));
             Garden currGarden = gardens.get(Integer.parseInt(str)-1);
             textView.setText(currGarden.getTitle());
 
-            
+            //DISPLAYING THE GARDEN'S PLANTS AND POPULATING IT!
+            for(Plant p : currGarden.getPlants()){
+                 String plantID = "space" + p.getPosition();
+                 int resID = getResources().getIdentifier(plantID, "id", PACKAGE_NAME);
+                 ImageButton currPlant = (ImageButton) rootView.findViewById(resID);
+                 String plantImg = "ic_" + p.getType() + "_" + p.getPhase();
+                 int plantImgID = getResources().getIdentifier(plantImg, "drawable", PACKAGE_NAME);
+                 Drawable drawable = getResources().getDrawable(plantImgID);
+                 currPlant.setBackground(drawable);
+            }
+
+            //SETTING LISTENERS ON EACH PLANT IMAGEBUTTON IN ORDER TO ENABLE
+            //SELECTING PLANT ON THE GARDEN TO DISPLAY ITS IMAGE!
             buttons= new ArrayList<ImageButton>();
             PlantListener l = new PlantListener();
-            
+
             for(int i=1; i<37; i++) {
                 String buttonID = "space" + i;
-                int resID = getResources().getIdentifier(buttonID, "id", getActivity().getPackageName());
-                buttons.add((ImageButton) getActivity().findViewById(resID));
-                buttons.get(i-1).setOnClickListener(l);
-//                buttons.get(i-1).setOnClickListener(new OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-////                         TextView plantDate = (TextView)getView().findViewById(R.id.tv_plantDate);
-////
-////                         plantDate.setText("Plant");
-//                           System.out.println("hello");
-//
-//                    }
-//                });
+                int resID = getResources().getIdentifier(buttonID, "id", PACKAGE_NAME);
+                buttons.add((ImageButton) rootView.findViewById(resID));
+                buttons.get(i-1).setOnClickListener(new OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        TextView plantDate = (TextView) getView().findViewById(R.id.tv_plantDate);
+
+                        plantDate.setText("Plant");
+
+                    }
+                });
+
 
             }
 
-
-            
-//
-//            ImageButton space1 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space2 = (ImageButton)rootView.findViewById(R.id.space2);
-//            ImageButton space3 = (ImageButton)rootView.findViewById(R.id.space3);
-//            ImageButton space4 = (ImageButton)rootView.findViewById(R.id.space4);
-//            ImageButton space5 = (ImageButton)rootView.findViewById(R.id.space5);
-//            ImageButton space6 = (ImageButton)rootView.findViewById(R.id.space6);
-//            ImageButton space7 = (ImageButton)rootView.findViewById(R.id.space7);
-//            ImageButton space8 = (ImageButton)rootView.findViewById(R.id.space8);
-//            ImageButton space9 = (ImageButton)rootView.findViewById(R.id.space9);
-//            ImageButton space10 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space11 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space12 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space13 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space14 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space15 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space16 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space17 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space18 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space19 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space20 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space21 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space22 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space23 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space24 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space25 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space26 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space27 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space28 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space29 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space30 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space31 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space32 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space33 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space34 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space35 = (ImageButton)rootView.findViewById(R.id.space1);
-//            ImageButton space36 = (ImageButton)rootView.findViewById(R.id.space1);
-//
-//
-//            plantDate.setOnClickListener(new OnClickListener(){
-//                @Override
-//                plantDate.setText("hello");
-//
-//
-//            });
             return rootView;
         }
     }
@@ -198,7 +182,7 @@ public class GardenActivity extends FragmentActivity {
     }
     public void showPlantDetails(View view) {
 
-   
+
     }
 
 }

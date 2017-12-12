@@ -48,4 +48,8 @@ public class Plant {
     public int getPosition() {
         return this.position;
     }
+
+    public String getType(){ return this.type;}
+
+    public int getPhase(){ return this.phase;}
 }

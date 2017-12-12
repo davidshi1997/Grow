@@ -45,7 +45,8 @@
             android:layout_alignTop="@+id/v_seed"
             android:layout_marginStart="25dp"
             android:layout_marginTop="75dp"
-            android:background="@drawable/ic_flower_5" />
+            android:clickable="true"
+            android:background="@drawable/ic_blank" />
 
         <ImageButton
             android:id="@+id/space2"
