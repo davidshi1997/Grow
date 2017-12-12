@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-
+import android.graphics.Typeface;
 import android.widget.TextView;
 
 import com.amazingapps.davidmaisy.grow.R;
@@ -53,14 +53,14 @@ public class GardenActivity extends FragmentActivity {
 
         /*DUMMY DATA WHILE WE DONT HAVE ANY DATA COMING FROM ANYWHERE ELSE!*/
         gardens = new ArrayList<Garden>();
-        Garden garden1 = new Garden(1, 2017);
+        Garden garden1 = new Garden();
         gardens.add(garden1);
-        Garden garden2 = new Garden(2, 2017);
-        gardens.add(garden2);
+
+
         Plant plant1 = new Plant("flower", 5, "alive");
         plant1.putPosition(1);
         Plant plant2 = new Plant("flower", 4, "dead");
-        plant2.putPosition(2);
+        plant2.putPosition(18);
         garden1.addPlant(plant1);
         garden1.addPlant(plant2);
 
@@ -149,7 +149,15 @@ public class GardenActivity extends FragmentActivity {
                         System.out.println(plantPosition);
                         for (Plant p: currGarden.getPlants())
                             if(p.getPosition()==plantPosition){
+                                TextView plantState = (TextView) getView().findViewById(R.id.tv_plantState);
+
+                                if(p.getState().equals("alive"))
+                                    plantState.setText("Nice! Keep up your water drinking habits. You grew this healthy plant on...");
+
+                                if(p.getState().equals("dead"))
+                                    plantState.setText("Try harder next time and drink more water... Your body needs it.  You failed to grow this plant on...");
                                 TextView plantDate = (TextView) getView().findViewById(R.id.tv_plantDate);
+
                                 plantDate.setText(p.getDate());
                             }
 

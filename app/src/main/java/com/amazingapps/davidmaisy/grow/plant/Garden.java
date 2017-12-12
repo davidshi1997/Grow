@@ -8,10 +8,10 @@ import java.util.Calendar;
  */
 
 public class Garden {
-    String[] monthName = {"January", "February",
-            "March", "April", "May", "June", "July",
-            "August", "September", "October", "November",
-            "December"
+    String[] monthName = {"JANUARY", "FEBRUARY",
+            "MARCH", "APRIL", "MAY", "JUNE", "JULY",
+            "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER",
+            "DECEMBER"
     };
     private int month;
     private int year;
@@ -23,12 +23,6 @@ public class Garden {
         Calendar now = Calendar.getInstance();
         this.year = now.get(Calendar.YEAR);
         this.month = now.get(Calendar.MONTH);
-    }
-
-    public Garden(int month, int year) {
-        this.plants = new ArrayList<Plant>();
-        this.year = year;
-        this.month = month;
     }
 
     public String getTitle() {

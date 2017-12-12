@@ -83,7 +83,7 @@
             android:layout_above="@id/progressBar"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/roboto_condensed_regular"
+            android:fontFamily="sans-serif-condensed"
             android:text="DEC 8 2017"
             android:textColor="#677e52"
             android:textSize="50sp" />
@@ -113,8 +113,9 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/tv_percentage"
             android:layout_centerHorizontal="true"
-            android:fontFamily="@font/roboto_light"
+            android:fontFamily="sans-serif-condensed"
             android:text="x.xx oz / x.xx oz"
+            android:textAllCaps="false"
             android:textColor="#89725b"
             android:textSize="30sp" />
 
@@ -125,10 +126,11 @@
             android:layout_above="@+id/btn_water"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="19dp"
-            android:fontFamily="@font/roboto_condensed_bold"
+            android:fontFamily="sans-serif-condensed"
             android:text="You're xx.x% of the way there!"
             android:textColor="#89725b"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btn_water"
@@ -139,12 +141,12 @@
             android:layout_marginStart="60dp"
             android:layout_toStartOf="@id/btn_add_size"
             android:background="@drawable/btn_drink_normal"
-            android:fontFamily="@font/roboto_condensed_regular"
+            android:fontFamily="sans-serif-condensed"
+            android:onClick="waterPlant"
             android:text="@string/water_button"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:onClick="waterPlant" />
+            android:textSize="18sp" />
 
         <ImageButton
             android:id="@+id/btn_add_size"
