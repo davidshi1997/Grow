@@ -368,14 +368,14 @@
 
         <TextView
             android:id="@+id/tv_plantDate"
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="51dp"
-            android:layout_toEndOf="@+id/space13"
+            android:layout_marginBottom="42dp"
             android:fontFamily="@font/roboto_condensed_bold"
+            android:textAlignment="center"
             android:textColor="#677e52"
-            android:textSize="40sp" />
+            android:textSize="18sp" />
     </RelativeLayout>
     <android.support.v4.view.ViewPager
         android:id="@+id/container"

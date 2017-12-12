@@ -117,7 +117,7 @@ public class GardenActivity extends FragmentActivity {
             //SETTING THE GARDEN'S MONTH/YEAR AND DISPLAYING
             TextView textView = (TextView) rootView.findViewById(R.id.tv_date);
             String str = getString(R.string.gardenDate, getArguments().getInt(ARG_SECTION_NUMBER));
-            Garden currGarden = gardens.get(Integer.parseInt(str)-1);
+            final Garden currGarden = gardens.get(Integer.parseInt(str)-1);
             textView.setText(currGarden.getTitle());
 
             //DISPLAYING THE GARDEN'S PLANTS AND POPULATING IT!
@@ -143,9 +143,18 @@ public class GardenActivity extends FragmentActivity {
                 buttons.get(i-1).setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        TextView plantDate = (TextView) getView().findViewById(R.id.tv_plantDate);
+                        ImageButton currButton = (ImageButton) view;
+                        String resourceName = getResources().getResourceEntryName(view.getId());
+                        int plantPosition = Integer.parseInt(resourceName.substring(resourceName.length()-1));
+                        System.out.println(plantPosition);
+                        for (Plant p: currGarden.getPlants())
+                            if(p.getPosition()==plantPosition){
+                                TextView plantDate = (TextView) getView().findViewById(R.id.tv_plantDate);
+                                plantDate.setText(p.getDate());
+                            }
 
-                        plantDate.setText("Plant");
+
+
 
                     }
                 });
