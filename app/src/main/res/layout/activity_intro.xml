@@ -26,22 +26,39 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         >
+
         <TextView
-            android:id="@+id/tutorialHeader1"
+            android:id="@+id/tv_tutorialHeader1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="50dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="DEC 8 2017"
+            android:text="WELCOME TO GROW"
+            android:textAlignment="center"
             android:textColor="#677e52"
-            android:textSize="50sp" />
+            android:textSize="30sp"
+            android:visibility="invisible"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tv_tutorialSubHeader1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Grow A Healthy Water Drinking Lifestyle"
+            android:textAlignment="center"
+            android:textColor="#677e52"
+            android:visibility="invisible"
+            android:textSize="20sp" />
         <View
             android:id="@+id/tutorialImg1"
             android:layout_width="210dp"
             android:layout_height="210dp"
             android:layout_marginTop="150dp"
             android:layout_centerHorizontal="true"
+            android:visibility="invisible"
             android:background="@drawable/ic_goodsky" />
         <View
             android:id="@+id/tutorialImgOverlay1"
@@ -49,8 +66,162 @@
             android:layout_height="70dp"
             android:layout_marginTop="200dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/ic_flower_1_dead" />
+            android:visibility="invisible"
+            android:background="@drawable/ic_flower_0_alive" />
 
+        <TextView
+            android:id="@+id/tv_tutorialDescription1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tutorialImg1"
+            android:layout_marginTop="42dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Start each day by planting a seed. This plant will represent your daily performance"
+            android:textAlignment="center"
+            android:textColor="#89725b"
+            android:visibility="invisible"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_tutorialHeader2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="DRINK WATER"
+            android:textAlignment="center"
+            android:textColor="#677e52"
+            android:textSize="30sp"
+            android:visibility="invisible"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/tutorialImg2"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="150dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:background="@drawable/ic_goodsky" />
+        <View
+            android:id="@+id/tutorialImgOverlay2"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="200dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:background="@drawable/ic_flower_5_alive" />
+
+        <TextView
+            android:id="@+id/tv_tutorialDescription2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tutorialImg1"
+            android:layout_marginTop="42dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Log how much you drink throughout the day, and watch your plant grow"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textColor="#89725b"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_tutorialHeader3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="STOP DEHYDRATING YOURSELF"
+            android:textAlignment="center"
+            android:textColor="#677e52"
+            android:textSize="30sp"
+            android:visibility="invisible"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/tutorialImg3"
+            android:layout_width="210dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="150dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:background="@drawable/ic_badsky" />
+        <View
+            android:id="@+id/tutorialImgOverlay3"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="200dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:background="@drawable/ic_flower_5_dead" />
+
+        <TextView
+            android:id="@+id/tv_tutorialDescription3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tutorialImg1"
+            android:layout_marginTop="42dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="The plant will be killed if you do not drink enough water by the end of the day"
+            android:textAlignment="center"
+            android:visibility="invisible"
+            android:textColor="#89725b"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_tutorialHeader4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="BUILD YOUR GARDEN"
+            android:textAlignment="center"
+            android:textColor="#677e52"
+            android:textSize="30sp"
+            android:visibility="invisible"
+            android:textStyle="bold" />
+
+        <View
+            android:id="@+id/tutorialImg4"
+            android:layout_width="500dp"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="146dp"
+            android:visibility="invisible"
+            android:background="@drawable/ic_samplegarden" />
+
+        <TextView
+            android:id="@+id/tv_tutorialDescription4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tutorialImg1"
+            android:layout_marginTop="42dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="The harder you work towards your water drinking routine, the lusher your garden is!"
+            android:textAlignment="center"
+            android:visibility="invisible"></TextView>
+
+        <Button
+            android:id="@+id/btn_water"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="250dp"
+            android:background="@drawable/btn_drink_normal"
+            android:fontFamily="sans-serif-condensed"
+            android:text="Let's get started"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"
+            android:textSize="18sp" />
 
     </RelativeLayout>
     <android.support.v4.view.ViewPager
