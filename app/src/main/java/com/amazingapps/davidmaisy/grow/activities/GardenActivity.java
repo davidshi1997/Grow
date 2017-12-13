@@ -1,6 +1,7 @@
 package com.amazingapps.davidmaisy.grow.activities;
 
 import android.graphics.drawable.Drawable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentActivity;
 
 import android.support.v4.app.Fragment;
@@ -55,6 +56,8 @@ public class GardenActivity extends FragmentActivity {
         gardens = new ArrayList<Garden>();
         Garden garden1 = new Garden();
         gardens.add(garden1);
+        Garden garden2 = new Garden();
+        gardens.add(garden2);
 
 
         Plant plant1 = new Plant("flower", 5, "alive");
@@ -75,6 +78,9 @@ public class GardenActivity extends FragmentActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
+        tabLayout.setupWithViewPager(mViewPager, true);
 
     }
 

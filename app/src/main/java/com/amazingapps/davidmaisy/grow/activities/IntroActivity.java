@@ -10,7 +10,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
+import android.support.design.widget.TabLayout;
 import android.widget.TextView;
 
 import com.amazingapps.davidmaisy.grow.R;
@@ -45,6 +45,11 @@ public class IntroActivity extends FragmentActivity {
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
+        tabLayout.setupWithViewPager(mViewPager, true);
+
+
         mViewPager.setAdapter(mSectionsPagerAdapter);
     }
 
