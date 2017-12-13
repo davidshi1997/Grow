@@ -107,6 +107,14 @@
             android:layout_centerHorizontal="true"
             android:background="@drawable/ic_goodsky" />
 
+        <View
+            android:id="@+id/tutorialImgOverlay1"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="200dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/ic_flower_1_dead" />
+
         <TextView
             android:id="@+id/tv_ratio"
             android:layout_width="wrap_content"
