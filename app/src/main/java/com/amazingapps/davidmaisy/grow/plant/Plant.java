@@ -23,6 +23,7 @@ public class Plant {
     public Plant(String type) {
         this.type = type;
         this.phase = -1;
+        this.state = "alive";
         this.position = -1;
         Calendar now = Calendar.getInstance();
         this.year = now.get(Calendar.YEAR);
@@ -41,18 +42,24 @@ public class Plant {
         this.month = now.get(Calendar.MONTH);
         this.dayOfWeek = now.get(Calendar.DAY_OF_WEEK);
         this.day = now.get(Calendar.DAY_OF_MONTH);
-
     }
+
+    public Plant(String type, int phase, String state, int position, Calendar past) {
+        this.type = type;
+        this.phase = phase;
+        this.state = state;
+        this.position = position;
+        this.year = past.get(Calendar.YEAR);
+        this.month = past.get(Calendar.MONTH);
+        this.dayOfWeek = past.get(Calendar.DAY_OF_WEEK);
+        this.day = past.get(Calendar.DAY_OF_MONTH);
+    }
+
 
     public String generateURI() {
-        return "drawable/ic_" + type + "_" + phase + ".png";
+        return "drawable/ic_" + type + "_" + phase + "_" + state + ".png";
     }
 
-    public String generateDeadURI() {
-        if (this.phase != 0)
-            return "drawable/ic_" + type + "_" + phase + "_dead.png";
-        return null;
-    }
 
     public boolean putPosition(int position) {
         if (position < 36 && position > -1) {
@@ -97,8 +104,8 @@ public class Plant {
         }
         return "";
     }
+
     public String getDate(){
-        System.out.println(this.dayOfWeek);
         return getDayOfWeek() + ", " + monthName[this.month] +  " " + this.day +", " + this.year;
     }
 }

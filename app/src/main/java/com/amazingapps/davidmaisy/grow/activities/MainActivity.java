@@ -2,16 +2,11 @@ package com.amazingapps.davidmaisy.grow.activities;
 
 import android.animation.ObjectAnimator;
 import android.app.AlarmManager;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.amazingapps.davidmaisy.grow.R;
+import com.amazingapps.davidmaisy.grow.plant.Plant;
 import com.amazingapps.davidmaisy.grow.utils.AlarmReceiver;
 
 import java.util.Calendar;
@@ -30,17 +26,21 @@ public class MainActivity extends AppCompatActivity {
 
     LinearLayout dropDownMenuIconItem;
     ProgressBar progressBar;
+    Context context;
 
     // TODO: Should load in saved data, such as coins, seeds, and drinks
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        context = getApplicationContext();
+
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         if (!preferences.contains("daily_water")) {
             try {
-                Intent k = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent k = new Intent(MainActivity.this, IntroActivity.class);
                 startActivity(k);
+                finish();
             } catch (Exception e) {
             }
         }
@@ -99,30 +99,46 @@ public class MainActivity extends AppCompatActivity {
         startActivity(k);
     }
 
+    public void newPlant(View view) {
+        String type = "flower"; // TODO: Change this to non static
+
+
+
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = settings.edit();
+
+
+    }
+
     public void waterPlant(View view) {
+        // Cancel all old notifications
+        NotificationManager nManager = ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE));
+        nManager.cancelAll();
+
+        SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = settings.edit();
+
+        int current_water = 0;
+        settings.getInt("current_water", current_water);
+        int daily_water = 0;
+        settings.getInt("daily_water", daily_water);
+
+        // TODO: Change this to a dynamic current_water value
+        current_water += 8;
+        editor.putInt("current_water", current_water);
+
+        if (current_water > daily_water) {
+            // TODO: Pop up congratz dialog
+        } else {
+
+        }
+
+        // Make a new one
         handleNotification();
     }
 
-    private static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
-        Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
-                .getHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(output);
+    public void addPlanttoGarden(Plant newPlant) {
 
-        final int color = 0x80FFFFFF;
-        final Paint paint = new Paint();
-        final Rect rect = new Rect(0, 0, bitmap.getWidth(), bitmap.getHeight());
-        final RectF rectF = new RectF(rect);
-        final float roundPx = pixels;
-
-        paint.setAntiAlias(true);
-        canvas.drawARGB(0, 0, 0, 0);
-        paint.setColor(color);
-        canvas.drawRoundRect(rectF, roundPx, roundPx, paint);
-
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        canvas.drawBitmap(bitmap, rect, rect, paint);
-
-        return output;
     }
 
     private void handleNotification() {

@@ -25,6 +25,13 @@ public class Garden {
         this.month = now.get(Calendar.MONTH);
     }
 
+    public Garden(ArrayList<Plant> plants, Calendar past) {
+        this.plants = plants;
+
+        this.year = past.get(Calendar.YEAR);
+        this.month = past.get(Calendar.MONTH);
+    }
+
     public String getTitle() {
         return monthName[this.month] + " " + this.year;
     }

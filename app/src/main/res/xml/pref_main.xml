@@ -41,7 +41,7 @@
 
     <PreferenceCategory android:title="User Data">
         <EditTextPreference
-            android:defaultValue="64"
+            android:defaultValue="@integer/waterlevel_default"
             android:summary="... mL"
             android:key="daily_water"
             android:inputType="numberDecimal"
